@@ -1,0 +1,53 @@
+<template name="registration">
+	<div class="courses grey lighten-4">
+    <div class="container">
+      	<div class="row">
+        	<div class="col s12">
+          	
+            	<table>
+              		<thead>
+                		<tr>
+                  			<th>Ders Adı</th>
+                  			<th>Kontenjan</th>
+                  		</tr>
+              		</thead>
+              		<tbody>
+                		{{#each coursesList}}
+                  			<tr>
+                    			<td><i class="material-icons circle"></i> {{name}}</td>
+                    			<td>{{quota}}</td>
+                  			</tr>
+                		{{/each}}
+              		</tbody>
+            	</table>
+            		<a class="waves-effect waves-light btn modal-trigger right" href="#modal1">Ders Ekle</a>
+          		<!-- Modal Trigger -->
+            
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Ders Kayıt</h4>
+                  <div class="row">
+
+                    {{>courseRegister}}
+                  </div>
+              </div>
+            </div>
+        	</div>
+     	 </div>
+    </div>
+    </div>
+</template>
+
+<template name="courseRegister">
+	<form class="col s12"  >
+		<label for="name">Ders Adı</label>
+    	<input  name="courseName" type="text"  > 
+
+    	<label for="name">Ders Kotası</label>
+    	<input  name="quota" type="number"  > 
+
+        <input class="modal-close btn waves-effect waves-light" type='submit' value='Kayıt'>
+	</form>
+</template>
